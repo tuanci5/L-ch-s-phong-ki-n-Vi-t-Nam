@@ -1,0 +1,1 @@
+export const decline: string = "Lạc hậu, bế quan tỏa cảng, thất bại trước thực dân Pháp. Trở thành chính quyền bù nhìn. Kết thúc khi Bảo Đại thoái vị năm 1945.";

@@ -1,0 +1,1 @@
+export const decline: string = "Do An Dương Vương chủ quan, khinh địch ('Đà không còn nỏ thần thì làm gì được ta'), mắc mưu gian của kẻ thù (câu chuyện Trọng Thủy - Mỵ Châu). Khi quân Triệu Đà tấn công, vũ khí mất tác dụng, vua thua chạy và nhảy xuống biển tự vẫn. Năm 179 TCN, nước Âu Lạc mất, mở đầu thời kỳ Bắc thuộc đen tối kéo dài hơn 1000 năm.";

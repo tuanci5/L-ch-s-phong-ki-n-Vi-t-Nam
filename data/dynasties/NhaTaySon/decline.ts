@@ -1,0 +1,1 @@
+export const decline: string = "Quang Trung mất sớm, vua Cảnh Thịnh nhỏ tuổi, nội bộ tướng lĩnh nghi kỵ giết hại lẫn nhau. Nguyễn Ánh phản công và lật đổ triều đại năm 1802.";

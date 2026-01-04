@@ -1,0 +1,1 @@
+export const decline: string = "Trước sức ép của quân giặc và thủ đoạn chia rẽ nham hiểm, nghĩa quân tan vỡ. Bà Triệu đã tuẫn tiết tại núi Tùng (Hậu Lộc, Thanh Hóa) năm 248, khi mới 23 tuổi. Cuộc khởi nghĩa tuy thất bại nhưng đã tô thắm thêm trang sử hào hùng của dân tộc.";

@@ -1,0 +1,1 @@
+export const decline: string = "Ngày 6 tháng 2 năm Quý Mão (năm 43), sau khi thất trận tại Cẩm Khê, Hai Bà Trưng lui về bến sông Hát (nơi dựng cờ khởi nghĩa ban đầu). Để giữ trọn khí tiết, không để rơi vào tay giặc, Hai Bà đã gieo mình xuống sông Hát tự vẫn. Cuộc khởi nghĩa thất bại, đất nước rơi vào thời kỳ Bắc thuộc lần thứ 2.";

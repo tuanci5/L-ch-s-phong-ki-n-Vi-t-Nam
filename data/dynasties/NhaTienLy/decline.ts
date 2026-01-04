@@ -1,0 +1,1 @@
+export const decline: string = "Sự sụp đổ của nhà Tiền Lý bắt nguồn từ sự chia rẽ nội bộ (Lý Phật Tử cướp ngôi). Khi nhà Tùy thống nhất Trung Quốc và xua quân xâm lược năm 602, Lý Phật Tử tuổi đã cao, nhu nhược, thấy quân giặc đông mạnh đã sợ hãi mở cửa thành đầu hàng, bị bắt giải về phương Bắc. Nước Vạn Xuân kết thúc.";

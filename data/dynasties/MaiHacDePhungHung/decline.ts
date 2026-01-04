@@ -1,0 +1,1 @@
+export const decline: string = "Các cuộc khởi nghĩa này cuối cùng đều bị nhà Đường với tiềm lực quân sự hùng mạnh đàn áp. Mai Hắc Đế bệnh mất trong rừng, Phùng An đầu hàng Triệu Xương. Tuy thất bại, nhưng đây là những đợt 'tập dượt' quan trọng, nuôi dưỡng ý chí độc lập để dẫn đến thắng lợi hoàn toàn vào thế kỷ X.";
