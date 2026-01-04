@@ -63,8 +63,8 @@ const App: React.FC = () => {
 
       <footer className="bg-[#5d4037] text-amber-100/60 py-8 mt-10">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-sm">
-            Nội dung được biên soạn dựa trên các tài liệu lịch sử Việt Nam (Đại Việt sử ký toàn thư, Việt Nam sử lược).
+          <p className="text-sm max-w-4xl mx-auto leading-relaxed">
+            Nội dung được biên soạn dựa trên các tài liệu lịch sử: Đại Việt sử ký toàn thư, Khâm định Việt sử thông giám cương mục, Đại Nam thực lục, Việt Nam sử lược, Hoàng Lê nhất thống chí, Gia Định thành thông chí, Lam Sơn thực lục, Lịch triều hiến chương loại chí và các tài liệu khác.
           </p>
           <p className="text-xs mt-2">
             &copy; {new Date().getFullYear()} Historical Timeline Visualization
