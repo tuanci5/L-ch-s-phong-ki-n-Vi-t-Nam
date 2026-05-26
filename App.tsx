@@ -13,12 +13,6 @@ const App: React.FC = () => {
     [selectedDynastyName]
   );
 
-  const handleRefresh = () => {
-    // Tăng key lên 1 sẽ làm cho toàn bộ nội dung bên dưới được khởi tạo lại
-    // Điều này giúp reset các modal, accordion về trạng thái đóng ban đầu
-    setRefreshKey(prev => prev + 1);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
 
   const handleSelectDynasty = (name: string) => {
     setSelectedDynastyName(name);
@@ -54,17 +48,6 @@ const App: React.FC = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                 </svg>
                 <span className="hidden sm:inline">Menu</span>
-              </button>
-
-              <button 
-                onClick={handleRefresh}
-                className="px-3 md:px-4 py-2 rounded-lg bg-stone-700/70 hover:bg-stone-600 text-white font-medium transition-colors flex items-center gap-2 text-sm md:text-base shadow-sm"
-                aria-label="Làm mới trang"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
-                </svg>
-                <span className="hidden md:inline">Làm mới</span>
               </button>
             </div>
           </div>
