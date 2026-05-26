@@ -14,8 +14,10 @@ import { ThoiKyTuChu } from "./dynasties/ThoiKyTuChu";
 import { TrungNuVuong } from "./dynasties/TrungNuVuong";
 import { KhoiNghiaBaTrieu } from "./dynasties/KhoiNghiaBaTrieu";
 import { MaiHacDePhungHung } from "./dynasties/MaiHacDePhungHung";
+import { HuyenSuKhoiNguon } from "./dynasties/HuyenSuKhoiNguon";
 
 export const STATIC_HISTORY_DATA: Record<string, Dynasty> = {
+  "Huyền sử khởi nguồn dân tộc": HuyenSuKhoiNguon,
   "Văn Lang - Âu Lạc": VanLangAuLac,
   "Trưng Nữ Vương": TrungNuVuong,
   "Khởi nghĩa Bà Triệu": KhoiNghiaBaTrieu,

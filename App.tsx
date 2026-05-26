@@ -43,8 +43,8 @@ const App: React.FC = () => {
       <main className="container mx-auto px-4 py-10 max-w-6xl">
         <div className="mb-10 text-center max-w-3xl mx-auto">
           <p className="text-lg text-stone-600 leading-relaxed font-serif">
-            Theo dòng lịch sử, các triều đại Việt Nam đã trải qua những quy luật thăng trầm tất yếu. 
-            Dưới đây là sự phân tích chi tiết về ba giai đoạn: <span className="text-emerald-700 font-bold">Hình thành</span>, <span className="text-sky-700 font-bold">Phát triển</span> và <span className="text-rose-700 font-bold">Suy vong</span> của từng triều đại.
+            Theo dòng lịch sử 4000 năm của dân tộc, từ lớp <span className="text-amber-700 font-bold">huyền sử khởi nguồn</span> đến các nhà nước và triều đại Việt Nam, mỗi giai đoạn đều mang dấu ấn dựng nước, giữ nước và phát triển văn hóa. 
+            Dưới đây là sự phân tích chi tiết về ba giai đoạn: <span className="text-emerald-700 font-bold">Hình thành</span>, <span className="text-sky-700 font-bold">Phát triển</span> và <span className="text-rose-700 font-bold">Suy vong</span> của từng thời kỳ.
           </p>
         </div>
 

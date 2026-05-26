@@ -1,4 +1,5 @@
 export const DYNASTIES_METADATA = [
+  { name: "Huyền sử khởi nguồn dân tộc", period: "Khoảng 4000 năm trước - trước Văn Lang" },
   { name: "Văn Lang - Âu Lạc", period: "Truyền thuyết: 2879 TCN - 179 TCN" },
   { name: "Trưng Nữ Vương", period: "40 - 43" },
   { name: "Khởi nghĩa Bà Triệu", period: "Năm 248" },
