@@ -1,25 +1,54 @@
-import React, { useMemo, useState } from 'react';
-import { DYNASTIES_METADATA } from './data/constants';
+import React, { useEffect, useMemo, useState } from 'react';
+import { DYNASTIES_METADATA, getDynastyUrl, getSlugFromHash } from './data/constants';
 import { DynastySection } from './components/DynastySection';
 
+const getInitialDynastyName = () => {
+  const slug = getSlugFromHash(window.location.hash);
+  return DYNASTIES_METADATA.find(dynasty => dynasty.slug === slug)?.name ?? DYNASTIES_METADATA[0]?.name ?? '';
+};
+
 const App: React.FC = () => {
-  // Sử dụng key để buộc React render lại danh sách khi nhấn nút làm mới
   const [refreshKey, setRefreshKey] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [selectedDynastyName, setSelectedDynastyName] = useState(DYNASTIES_METADATA[0]?.name ?? '');
+  const [selectedDynastyName, setSelectedDynastyName] = useState(getInitialDynastyName);
 
   const selectedDynasty = useMemo(
     () => DYNASTIES_METADATA.find(dynasty => dynasty.name === selectedDynastyName) ?? DYNASTIES_METADATA[0],
     [selectedDynastyName]
   );
 
+  useEffect(() => {
+    const handleHashChange = () => {
+      const slug = getSlugFromHash(window.location.hash);
+      const dynastyFromUrl = DYNASTIES_METADATA.find(dynasty => dynasty.slug === slug);
+      if (dynastyFromUrl) {
+        setSelectedDynastyName(dynastyFromUrl.name);
+        setRefreshKey(prev => prev + 1);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
 
   const handleSelectDynasty = (name: string) => {
+    const dynasty = DYNASTIES_METADATA.find(item => item.name === name);
+    if (!dynasty) return;
+
     setSelectedDynastyName(name);
     setRefreshKey(prev => prev + 1);
     setIsMenuOpen(false);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    const nextHash = getDynastyUrl(dynasty.slug);
+    if (window.location.hash !== nextHash) {
+      window.location.hash = nextHash;
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
+
+  const currentUrl = selectedDynasty ? getDynastyUrl(selectedDynasty.slug) : '';
 
   return (
     <div className="min-h-screen bg-[#f8f5f0] text-stone-800">
@@ -68,10 +97,11 @@ const App: React.FC = () => {
                 {DYNASTIES_METADATA.map((dynasty, index) => {
                   const isActive = dynasty.name === selectedDynasty.name;
                   return (
-                    <button
+                    <a
                       key={dynasty.name}
+                      href={getDynastyUrl(dynasty.slug)}
                       onClick={() => handleSelectDynasty(dynasty.name)}
-                      className={`text-left rounded-xl p-3 transition-all border ${
+                      className={`text-left rounded-xl p-3 transition-all border block ${
                         isActive
                           ? 'bg-amber-500 text-white border-amber-300 shadow-md'
                           : 'bg-white/8 hover:bg-white/14 text-amber-50 border-white/10'
@@ -84,7 +114,7 @@ const App: React.FC = () => {
                       <span className={`block text-xs mt-1 leading-snug ${isActive ? 'text-white/85' : 'text-amber-100/60'}`}>
                         {dynasty.period}
                       </span>
-                    </button>
+                    </a>
                   );
                 })}
               </div>
@@ -96,17 +126,19 @@ const App: React.FC = () => {
       {/* Main Content */}
       <main className="container mx-auto px-3 sm:px-4 py-6 md:py-10 max-w-6xl">
         <div className="mb-6 md:mb-10 text-center max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 rounded-full bg-amber-100 text-amber-900 border border-amber-200 px-4 py-2 mb-4 text-sm font-bold shadow-sm">
-            <span>Đang xem:</span>
-            <span>{selectedDynasty.name}</span>
+          <div className="inline-flex flex-col sm:flex-row sm:items-center gap-2 rounded-2xl sm:rounded-full bg-amber-100 text-amber-900 border border-amber-200 px-4 py-2 mb-4 text-sm font-bold shadow-sm">
+            <span>Đang xem: {selectedDynasty.name}</span>
+            <a className="text-xs sm:text-sm text-amber-700 underline underline-offset-2 break-all" href={currentUrl}>
+              {currentUrl}
+            </a>
           </div>
           <p className="text-base md:text-lg text-stone-600 leading-relaxed font-serif px-1">
             Theo dòng lịch sử 4000 năm của dân tộc, từ lớp <span className="text-amber-700 font-bold">huyền sử khởi nguồn</span> đến các nhà nước và triều đại Việt Nam, mỗi giai đoạn đều mang dấu ấn dựng nước, giữ nước và phát triển văn hóa. 
-            Dùng <span className="text-amber-700 font-bold">Menu</span> để chọn nhanh triều đại muốn xem trên mobile.
+            Dùng <span className="text-amber-700 font-bold">Menu</span> để chọn nhanh triều đại muốn xem; mỗi triều đại có một URL riêng để chia sẻ trực tiếp.
           </p>
         </div>
 
-        {/* Sử dụng key ở đây để buộc re-render khi nhấn nút làm mới/chọn triều đại */}
+        {/* Sử dụng key ở đây để buộc re-render khi chọn triều đại */}
         <div key={refreshKey} className="bg-white shadow-xl rounded-2xl p-4 sm:p-6 md:p-10 border border-stone-200">
           {selectedDynasty && (
             <DynastySection
