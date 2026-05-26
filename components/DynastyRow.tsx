@@ -52,24 +52,24 @@ export const DynastyRow: React.FC<DynastyRowProps> = ({ dynasty, isLast }) => {
   };
 
   return (
-    <div className={`mb-16 ${!isLast ? 'border-b-4 border-stone-200 pb-16' : ''}`}>
+    <div className={`mb-10 md:mb-16 ${!isLast ? 'border-b-4 border-stone-200 pb-10 md:pb-16' : ''}`}>
       {/* Header Section */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 border-l-8 border-amber-700 pl-6">
+      <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 md:mb-8 border-l-4 md:border-l-8 border-amber-700 pl-4 md:pl-6">
         <div>
-          <h2 className="text-4xl font-bold text-stone-800 font-serif">{dynasty.name}</h2>
-          <span className="text-amber-800 font-bold text-xl mt-2 inline-block bg-amber-100/80 px-4 py-1 rounded-lg border border-amber-200">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-stone-800 font-serif leading-tight">{dynasty.name}</h2>
+          <span className="text-amber-800 font-bold text-sm sm:text-base md:text-xl mt-2 inline-block bg-amber-100/80 px-3 md:px-4 py-1 rounded-lg border border-amber-200">
             {dynasty.period}
           </span>
         </div>
       </div>
 
       {/* Main Grid: Formation - Development - Decline */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-6 md:mb-8">
         
         {/* Column 1: Formation */}
         <div 
           onClick={() => setShowFormationModal(true)}
-          className="bg-emerald-50/60 rounded-xl p-6 border border-emerald-100 hover:shadow-xl transition-all duration-300 cursor-pointer group relative hover:bg-emerald-100/50 hover:-translate-y-1"
+          className="bg-emerald-50/60 rounded-xl p-4 md:p-6 border border-emerald-100 hover:shadow-xl transition-all duration-300 cursor-pointer group relative hover:bg-emerald-100/50 hover:-translate-y-1"
         >
           <div className="flex items-center gap-3 mb-4">
             <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 shadow-sm">
@@ -77,7 +77,7 @@ export const DynastyRow: React.FC<DynastyRowProps> = ({ dynasty, isLast }) => {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
               </svg>
             </div>
-            <h3 className="text-xl font-bold text-emerald-900 uppercase tracking-wide">Hình thành</h3>
+            <h3 className="text-lg md:text-xl font-bold text-emerald-900 uppercase tracking-wide">Hình thành</h3>
           </div>
           <p className="text-stone-700 leading-relaxed text-sm line-clamp-4 font-medium">
             {dynasty.formation.details}
@@ -90,7 +90,7 @@ export const DynastyRow: React.FC<DynastyRowProps> = ({ dynasty, isLast }) => {
         {/* Column 2: Development */}
         <div 
           onClick={() => setShowDevelopmentModal(true)}
-          className="bg-sky-50/60 rounded-xl p-6 border border-sky-100 hover:shadow-xl transition-all duration-300 cursor-pointer group relative hover:bg-sky-100/50 hover:-translate-y-1"
+          className="bg-sky-50/60 rounded-xl p-4 md:p-6 border border-sky-100 hover:shadow-xl transition-all duration-300 cursor-pointer group relative hover:bg-sky-100/50 hover:-translate-y-1"
         >
           <div className="flex items-center gap-3 mb-4">
             <div className="w-10 h-10 rounded-full bg-sky-100 flex items-center justify-center text-sky-700 shadow-sm">
@@ -98,7 +98,7 @@ export const DynastyRow: React.FC<DynastyRowProps> = ({ dynasty, isLast }) => {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18 9 11.25l4.306 4.307a11.95 11.95 0 0 1 5.814-5.519l2.74-1.22m0 0-5.94-2.28m5.94 2.28-4.277 4.277" />
               </svg>
             </div>
-            <h3 className="text-xl font-bold text-sky-900 uppercase tracking-wide">Phát triển</h3>
+            <h3 className="text-lg md:text-xl font-bold text-sky-900 uppercase tracking-wide">Phát triển</h3>
           </div>
           <p className="text-stone-700 leading-relaxed text-sm line-clamp-4 font-medium">
             {dynasty.development.overview}
@@ -109,14 +109,14 @@ export const DynastyRow: React.FC<DynastyRowProps> = ({ dynasty, isLast }) => {
         </div>
 
         {/* Column 3: Decline */}
-        <div className="bg-rose-50/60 rounded-xl p-6 border border-rose-100 hover:shadow-md transition-all duration-300 hover:bg-rose-100/50">
+        <div className="bg-rose-50/60 rounded-xl p-4 md:p-6 border border-rose-100 hover:shadow-md transition-all duration-300 hover:bg-rose-100/50">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-10 h-10 rounded-full bg-rose-100 flex items-center justify-center text-rose-700 shadow-sm">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6 9 12.75l4.286-4.286a11.948 11.948 0 0 1 4.306 5.102l1.08-1.58m0 0-6.15-2.25m6.15 2.25-1.5 5.85" />
               </svg>
             </div>
-            <h3 className="text-xl font-bold text-rose-900 uppercase tracking-wide">Suy vong</h3>
+            <h3 className="text-lg md:text-xl font-bold text-rose-900 uppercase tracking-wide">Suy vong</h3>
           </div>
           <p className="text-stone-700 leading-relaxed text-sm font-medium">
             {dynasty.decline}
@@ -125,8 +125,8 @@ export const DynastyRow: React.FC<DynastyRowProps> = ({ dynasty, isLast }) => {
       </div>
 
       {/* --- NEW SECTION: RESISTANCE & UPRISINGS --- */}
-      <div className="bg-amber-50/50 rounded-2xl p-6 md:p-8 border border-amber-100/80 shadow-sm">
-        <h3 className="text-2xl font-bold text-amber-900 font-serif mb-6 flex items-center gap-3">
+      <div className="bg-amber-50/50 rounded-2xl p-4 md:p-8 border border-amber-100/80 shadow-sm">
+        <h3 className="text-xl md:text-2xl font-bold text-amber-900 font-serif mb-5 md:mb-6 flex items-center gap-3">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
             <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
           </svg>
